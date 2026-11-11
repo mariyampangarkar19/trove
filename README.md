@@ -15,7 +15,7 @@ I built it in October 2026 for my own job search across six markets (UAE, German
 | **Verify** | Each posting is re-checked through the ATS's own API (for example Greenhouse `boards-api`, Lever `postings`, Ashby `posting-api`). Dead or redirected links never reach the list. |
 | **Match resume** | [`tools/tracker.py`](tools/tracker.py) maps the job title to the best-matching resume version and flags keywords from the posting that are missing from it. |
 | **Decide the route** | Each role is marked **Apply now** (startups and mid-size firms, where a direct application gets read) or **Referral first** (large companies and MNCs, where cold applications are auto-screened). Stretch roles are dropped rather than kept on hope. |
-| **Outreach** | For referral-first roles, research sub-agents find one senior person near the role (site head, CTO, engineering or AI director) and one recent public hook, each with a source URL. They draft a connection note (max 300 characters) and a short message (max 120 words) using only facts from the resume source, ending with a request to be pointed to the hiring person. |
+| **Outreach** | For referral-first roles, research sub-agents find one senior person near the role (site head, CTO, engineering or AI director) and one recent public hook, each with a source URL. Drafts are deliberately bold rather than polite boilerplate: hook first, one memorable proof point, a clear ask. Because LinkedIn caps personalised invites, only the 3 strongest contacts each week get a connection note (max 300 characters); the rest get a no-note request, a message for after they accept, and an email backup with a likely-format address flagged "verify first". Only facts from the resume source are used. |
 | **Track** | Rows go to a Google Sheet the person edits by hand, deduplicated against everything seen before. Drafts go to an `Outreach` tab in the same sheet with a status dropdown (Drafted, Note sent, Connected, Replied, Referred, No reply). A read-only inbox pass keeps statuses up to date. |
 | **Report** | A short summary after each run with the top 3 roles, and a weekly review. |
 
@@ -31,7 +31,7 @@ flowchart LR
     TR --> R{Route}
     R -->|Apply now| GS[(Google Sheet<br/>Applications tab)]
     R -->|Referral first| RA[Research sub-agents<br/>senior contact + hook]
-    RA --> D[Draft note + message]
+    RA --> D[Draft note, message<br/>+ email backup]
     D --> OT[(Outreach tab)]
     GS & OT --> H[Person reviews, applies and sends]
 ```
