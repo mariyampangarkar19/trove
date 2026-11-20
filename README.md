@@ -67,7 +67,7 @@ Other tracker commands: `expire <ids>`, `remove <ids>` and `relink <file.json>`.
 
 ## How it was built
 
-Orchestration runs on scheduled [Claude Code](https://claude.ai/code) sessions that read [`docs/AGENT_PROMPT.md`](docs/AGENT_PROMPT.md) and the rules file, fan the search out to sub-agents, and use Google Sheets and Gmail connectors. I designed the workflow, the rubric and the rules and iterated on them daily from the results; Claude Code wrote most of the code under that direction.
+Orchestration runs on scheduled [Claude Code](https://claude.ai/code) sessions that read [`docs/AGENT_PROMPT.md`](docs/AGENT_PROMPT.md) and the rules file, fan the search out to sub-agents, and use Google Sheets and Gmail connectors. I designed the workflow, the rubric and the rules, and I iterate on them daily based on the results.
 
 ---
 Mariyam Pangarkar · [LinkedIn](https://linkedin.com/in/mariyam-pangarkar) · [Portfolio](https://mariyampangarkar19.github.io)

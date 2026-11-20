@@ -233,9 +233,9 @@ def create():
         "4. After applying: set Status to Applied and type the Date applied. Follow-up due fills in (5 working days) and turns red when due.",
         "5. Message the recruiter or hiring manager the same day; put their name in Contact name and set Message sent? to Yes.",
         "6. Move Status as things progress. Rows turn blue for interviews, green for an offer, grey when closed.",
-        "7. Dashboard tab: response rate by market and by resume. Claude reads this every Friday to adjust the next week.",
+        "7. Dashboard tab: response rate by market and by resume. The agent reads this every Friday to adjust the next week.",
         "",
-        "Claude adds new roles to the bottom of the Applications tab each weekday. Don't rename or reorder the columns.",
+        "The agent adds new roles to the bottom of the Applications tab each weekday. Don't rename or reorder the columns.",
     ]:
         how.append([line])
     how["A1"].font = Font(bold=True, size=14)
